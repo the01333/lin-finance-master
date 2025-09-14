@@ -7,12 +7,6 @@
     <artifactId>lin-finance-master</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>lin-finance-master</name>
-    <modules>
-        <module>../lin-finance-mybatis</module>
-        <module>../lin-finance-wx</module>
-        <module>../lin-finance-biz</module>
-        <module>../lin-finance-admin-api</module>
-    </modules>
     <packaging>pom</packaging>
     <description>lin's financial system parent module</description>
     
@@ -198,7 +192,7 @@
                     <include>application-${profiles.active}.yml</include>
                     <include>logback-spring.xml</include>
                     <include>logback-spring-${profiles.active}.xml</include>
-                    <include>mapper/**/*.xml</include>
+                    <include>**/*.xml</include>
                 </includes>
                 <!--maven 编译时会替换文件里面的变量-->
                 <filtering>true</filtering>

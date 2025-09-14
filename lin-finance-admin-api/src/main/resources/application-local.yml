@@ -6,7 +6,7 @@ spring:
     username: root
     password: root
   redis:
-    database: 0
+    database: 3
     port: 6379
     lettuce:
       pool:
@@ -26,3 +26,7 @@ spring:
 logging:
   file:
     name: ../${spring.application.name}/logs/lin-finance-admin-api.log
+    
+redisson:
+  address: redis://127.0.0.1:6379
+  password: root

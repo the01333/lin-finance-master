@@ -14,6 +14,10 @@ public class ApiResponse<T> {
     private Integer code = 0;
     private String message;
     private Map<String, String> errorMessage;
+
+    public static <T> ApiResponse<T> success() {
+        return success(null);
+    }
     
     public static <T> ApiResponse<T> success(T data) {
         ApiResponse<T> apiResponse = new ApiResponse<>();
