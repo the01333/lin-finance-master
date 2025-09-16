@@ -19,7 +19,7 @@ import static com.puxinxiaolin.finance.biz.domain.MemberBindPhoneField.*;
 public class MemberBindPhoneServiceImpl implements MemberBindPhoneService {
     final MemberBindPhoneMapper memberBindPhoneMapper;
     final PasswordEncoder passwordEncoder;
-    
+
     /**
      * 根据手机号获取用户信息
      *
@@ -31,8 +31,9 @@ public class MemberBindPhoneServiceImpl implements MemberBindPhoneService {
         MybatisWrapper<MemberBindPhone> wrapper = new MybatisWrapper<>();
         wrapper.select(MemberId, Phone, Password)
                 .whereBuilder()
-                .andEq(Phone, phone);
-        
+                .andEq(Phone, phone)
+                .andEq(setDisable(false));
+
         return memberBindPhoneMapper.topOne(wrapper);
     }
 
@@ -51,7 +52,7 @@ public class MemberBindPhoneServiceImpl implements MemberBindPhoneService {
         memberBindPhone.setPhone(phone);
         memberBindPhone.setMemberId(memberId);
         memberBindPhone.setPassword(passwordEncoder.encode(password));
-        
+
         return memberBindPhoneMapper.insert(memberBindPhone) > 0;
     }
 
