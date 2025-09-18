@@ -30,3 +30,12 @@ logging:
 redisson:
   address: redis://127.0.0.1:6379
   password: root
+  
+wx:
+  mp:
+    # 测试号
+    appid: wx66eb4ba1e78feff0
+    secret: 333225363f6789756a61f24010dd4291
+    codeExpire: 3600
+    token: puxinxiaolin
+    encodingAESKey:

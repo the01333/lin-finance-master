@@ -1,5 +1,5 @@
 server:
-  port: 8091
+  port: 8888
 #  servlet:
 #     context-path: /mysass-finance-admin-api
   tomcat:
@@ -81,7 +81,7 @@ security:
     - /favicon.ico
     - /login/*
     - /reg/*
-    - /wxEvent/receiveMpEvent
+#    - /wxEvent/receiveMpEvent
   expire: 36000
 sys:
   #是否开启redisTemplate配置(默认关闭)

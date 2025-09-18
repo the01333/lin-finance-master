@@ -32,4 +32,9 @@ public class BaseUserInfoDTO {
      */
     private TokenResponse token;
 
+    /**
+     * 客户端 id（最新登录设备的id）
+     */
+    private String clientId;
+
 }

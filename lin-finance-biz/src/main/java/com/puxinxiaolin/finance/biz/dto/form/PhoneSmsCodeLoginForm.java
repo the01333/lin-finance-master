@@ -1,5 +1,6 @@
 package com.puxinxiaolin.finance.biz.dto.form;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -16,6 +17,7 @@ public class PhoneSmsCodeLoginForm {
     /**
      * 客户端id
      */
+    @ApiModelProperty(value = "客户端 id")
     @NotBlank(message = "请输入客户端id")
     @Pattern(regexp = "^[0-9A-Za-z]{6,32}$", message = "clientId非法")
     private String clientId;
@@ -23,6 +25,7 @@ public class PhoneSmsCodeLoginForm {
     /**
      * 手机号
      */
+    @ApiModelProperty(value = "手机号")
     @NotBlank(message = "手机号不能为空")
     @Pattern(regexp = "^1\\d{10}$", message = "手机号格式错误！")
     private String phone;
@@ -30,6 +33,7 @@ public class PhoneSmsCodeLoginForm {
     /**
      * 短信验证码
      */
+    @ApiModelProperty(value = "短信验证码")
     @NotBlank(message = "请输入短信验证码")
     @Pattern(regexp = "^[0-9]{6}$", message = "短信验证码格式不正确")
     private String smsCode;
