@@ -7,6 +7,9 @@ package com.puxinxiaolin.finance.biz.constant;
  */
 public class RedisKeyConstant {
 
+    // 客户端 token
+    public static final String CLIENT_TOKEN_KEY = "CLIENT_TOKEN_KEY:";
+    
     // 新增或修改手机号
     public static final String PHONE_CHANGE = "PHONE_CHANGE:";
     
