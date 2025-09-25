@@ -49,4 +49,5 @@ public class AuthFilterConfig extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         return authFilterService.shouldNotFilter(request);
     }
+    
 }

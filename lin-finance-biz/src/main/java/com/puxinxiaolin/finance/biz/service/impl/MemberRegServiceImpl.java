@@ -109,7 +109,8 @@ public class MemberRegServiceImpl implements MemberRegService {
      */
     @Override
     public GenerateMpRegCodeVo generateMpRegCode(String clientId) {
-        AccessTokenResult accessTokenResult = wxService.getMpAccessToken(wxConfig.getMp().getAppId(), wxConfig.getMp().getSecret());
+//        AccessTokenResult accessTokenResult = wxService.getMpAccessToken(wxConfig.getMp().getAppId(), wxConfig.getMp().getSecret());
+        AccessTokenResult accessTokenResult = wxService.getMpAccessTokenByCache(wxConfig.getMp().getAppId());
 
         MpQrCodeCreateRequest request = new MpQrCodeCreateRequest();
         request.setExpireSeconds(wxConfig.getMp().getCodeExpire());
