@@ -30,9 +30,4 @@ public class GenerateMpRegCodeVo {
      */
     private String qrCodeUrl;
 
-    /**
-     * 客户端 ID
-     */
-    private String clientId;
-
 }

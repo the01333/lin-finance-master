@@ -8,7 +8,6 @@ import com.puxinxiaolin.wx.service.WxService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.BodyInserters;
@@ -20,37 +19,10 @@ import java.util.Objects;
 @Slf4j
 @RequiredArgsConstructor
 public class WxServiceImpl implements WxService {
-    final RedisTemplate<String, Object> redisTemplate;
-    private static final String MP_TOKEN_REDIS_CACHE_KEY = "MP_TOKEN_REDIS_CACHE_KEY:";
     final WebClient webClient;
     // 重试次数
     int retry = 3;
 
-    /**
-     * 从缓存中获取公众号token
-     *
-     * @param appid
-     * @return
-     */
-    @Override
-    public AccessTokenResult getMpAccessTokenByCache(String appid) {
-        return (AccessTokenResult) redisTemplate.opsForValue()
-                .get(MP_TOKEN_REDIS_CACHE_KEY + appid);
-    }
-
-    /**
-     * 设置公众号 token 信息到缓存中
-     *
-     * @param appid
-     * @param secret
-     */
-    @Override
-    public void setMpAccessTokenCache(String appid, String secret) {
-        AccessTokenResult accessTokenResult = getMpAccessToken(appid, secret);
-        redisTemplate.opsForValue()
-                .set(MP_TOKEN_REDIS_CACHE_KEY + appid, accessTokenResult);
-    }
-    
     /**
      * 获取公众号 token
      *

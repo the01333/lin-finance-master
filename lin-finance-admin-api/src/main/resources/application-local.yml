@@ -39,21 +39,3 @@ wx:
     codeExpire: 3600
     token: puxinxiaolin
     encodingAESKey:
-
-# xxl-job
-xxl:
-  job:
-    admin:
-      ### 调度中心部署跟地址 [选填]：如调度中心集群部署存在多个地址则用逗号分隔。执行器将会使用该地址进行"执行器心跳注册"和"任务结果回调"；为空则关闭自动注册；
-      addresses: http://localhost:8080/xxl-job-admin
-    ### 执行器通讯TOKEN [选填]：非空时启用；
-    accessToken: default_token
-
-# aliyun SDK
-ali:
-  accesskeyId: LTAI5tC1dWwB8Po2MaL1XmPe
-  accessKeySecret: H3lisFenGdv8v5ngGbKS8wWgMXMjSn
-  sms:
-    enable: true
-    endpoint: dysmsapi.aliyuncs.com
-    region: cn-hangzhou
